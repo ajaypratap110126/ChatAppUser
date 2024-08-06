@@ -13,7 +13,7 @@ const Users = () => {
             Messages
         </h1>
         <div className='m-2 flex-1 overflow-y-auto'
-        style={{maxHeight: "calc(84vh - 10vh)"}}
+        style={{maxHeight: "calc(84vh - 10vh)", }}
         >
           {allUsers.map((user, index)=>(
             <User key={index} user={user} />
