@@ -31,7 +31,7 @@ const App = () => {
                 
                 <Right />
               </div>
-              <div className="drawer-side">
+              <div className="drawer-side " style={{"overflow": "hidden"}}>
                 <label 
                   htmlFor="my-drawer-2" 
                   aria-label="close sidebar" 
