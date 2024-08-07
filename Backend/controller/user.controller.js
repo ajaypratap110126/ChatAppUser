@@ -1,6 +1,6 @@
 import createTokenAndSaveCookies from "../jwt/generateToken.js";
 import User from "../models/user.model.js";
-import bcrypt from "bcrypt";
+import bcryptjs from "bcryptjs";
 
 const signup =async (req, res) =>{
     const {fullname, email, password, confirm_password} = req.body;
@@ -12,7 +12,7 @@ const signup =async (req, res) =>{
         if(user){
             return res.status(400).json({error: "User already registered with this email id!"});
         }
-        const hashPassword = await bcrypt.hash(password,10);
+        const hashPassword = await bcryptjs.hash(password,10);
         const newUser =await new User({
             fullname,
             email,
@@ -42,7 +42,7 @@ export const login = async(req, res) =>{
     const {email, password} =req.body;
     try {
         const user =await User.findOne({email});
-        const isMatch =await bcrypt.compare(password, user.password);
+        const isMatch =await bcryptjs.compare(password, user.password);
         if(!user || !isMatch){
             return res.status(400).json({error: "Invalid User Credential" });
         }
