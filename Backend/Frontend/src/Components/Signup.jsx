@@ -47,7 +47,7 @@ const Signup = () => {
     return (
         <>
             <div className='flex h-screen items-center justify-center'>
-                <form  onSubmit={handleSubmit(onSubmit)} action='' className='border border-black px-6 py-2 rounded-md space-y-3 w-[25%]'>
+                <form  onSubmit={handleSubmit(onSubmit)} action='' className='border border-black px-6 py-2 rounded-md space-y-3 w-[60%] md:w-[25%]'>
                 <h1 className='text-2xl text-center text-green-600 font-semibold py-2'>Chat App</h1>
                 <h2 className='text-black font-bold py-2'>Signup Form</h2>
                 {/* fullname */}
